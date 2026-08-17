@@ -1,0 +1,6 @@
+{
+  "name": "AEVY Fragrance",
+  "description": "Premium luxury fragrance house e-commerce platform for AEVY (Essence of Fresh Elegance), featuring Oceanis, editorial storytelling, Bangladesh delivery checkout, inventory, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

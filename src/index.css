@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', 'Cinzel', 'Hind Siliguri', Georgia, serif;
+    --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+    --font-sans: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #F5F1E8;
+    background-color: #0B0B0B;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: 0.04em;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.2em;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* High legibility class for body copies */
+  p, span, label, input, textarea, select, button {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom minimal scrollbar for Elegant Dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A96A;
+}
+
+/* Elegant focus ring */
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #C8A96A;
+}

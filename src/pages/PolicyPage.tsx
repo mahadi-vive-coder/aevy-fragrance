@@ -38,7 +38,11 @@ export const PolicyPage: React.FC<PolicyPageProps> = ({ policyType, onNavigateCo
       sections: [
         {
           heading: '1. Damaged or Compromised Shipments',
+<<<<<<< HEAD
           body: 'Every AEVY flacon is carefully inspected and packaged in protective collector boxes. If your bottle arrives broken, leaking, or damaged during courier transit, please notify our Fragrance Concierge (01629927898 or concierge@aevyfragrance.com) within 24 hours of delivery with photographic evidence.'
+=======
+          body: 'Every AEVY flacon is carefully inspected and packaged in protective collector boxes. If your bottle arrives broken, leaking, or damaged during courier transit, please notify our WhatsApp Concierge within 24 hours of delivery with photographic evidence.'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
         },
         {
           heading: '2. Complimentary Replacement',
@@ -46,7 +50,11 @@ export const PolicyPage: React.FC<PolicyPageProps> = ({ policyType, onNavigateCo
         },
         {
           heading: '3. Hygiene & Fragrance Integrity',
+<<<<<<< HEAD
           body: 'Due to the intimate, small-batch nature of Extrait de Parfum formulations, bottles that have been unsealed and sprayed cannot be returned for a change of mind. We recommend consulting our fragrance concierge for olfactory guidance prior to purchasing.'
+=======
+          body: 'Due to the intimate, small-batch nature of Extrait de Parfum formulations, bottles that have been unsealed and sprayed cannot be returned for a change of mind. We recommend consulting our WhatsApp fragrance concierge for olfactory guidance prior to purchasing.'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
         }
       ]
     },

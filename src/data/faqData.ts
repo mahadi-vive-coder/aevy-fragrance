@@ -46,12 +46,20 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'faq-7',
     category: 'Returns & Authenticity',
     question: 'Are AEVY fragrances authentic and small-batch?',
+<<<<<<< HEAD
     answer: '100% authentic. Every single flacon is blended, macerated, and bottled in small batches in our Narayanganj & Dhaka atelier using sustainably sourced niche oils.'
+=======
+    answer: '100% authentic. Every single flacon is blended, macerated, and bottled in small batches right here in our Dhaka atelier using sustainably sourced niche oils.'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   },
   {
     id: 'faq-8',
     category: 'Returns & Authenticity',
     question: 'What is your damage or replacement policy?',
+<<<<<<< HEAD
     answer: 'If your flacon arrives damaged or compromised during courier transit, please notify our concierge (01629927898 or concierge@aevyfragrance.com) within 24 hours with photos, and we will issue an immediate priority replacement at no cost.'
+=======
+    answer: 'If your flacon arrives damaged or compromised during courier transit, please notify our WhatsApp concierge within 24 hours with photos, and we will issue an immediate priority replacement at no cost.'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }
 ];

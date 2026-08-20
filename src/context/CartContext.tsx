@@ -1,7 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CartItem, Product } from '../types.ts';
 import { validateCoupon } from '../lib/api.ts';
+<<<<<<< HEAD
 import { resolveImageUrl } from '../lib/images.ts';
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
 interface CartContextType {
   cart: CartItem[];
@@ -80,7 +83,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const addToCart = (product: Product, size: string = '30ml', quantity: number = 1) => {
     const sizeVariant = product.sizes.find(s => s.size === size) || product.sizes[0];
     const unitPrice = sizeVariant ? sizeVariant.price : product.price;
+<<<<<<< HEAD
     const itemImage = resolveImageUrl(product.images[0]);
+=======
+    const itemImage = product.images[0] || '/src/assets/images/aevy_oceanis_bottle_1786864368427.jpg';
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
     setCart(prev => {
       const existingIndex = prev.findIndex(item => item.productId === product.id && item.size === size);

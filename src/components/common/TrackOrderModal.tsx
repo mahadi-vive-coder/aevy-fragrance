@@ -161,14 +161,22 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs transition-colors ${
                             isCompleted
                               ? 'bg-[#C8A96A] text-[#0B0B0B] font-bold border-2 border-[#C8A96A]'
+<<<<<<< HEAD
                               : 'bg-[#111111] text-[#999999] border border-[#2A2A2A]'
+=======
+                              : 'bg-[#111111] text-[#F5F1E8]/40 border border-[#2A2A2A]'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                           }`}
                         >
                           {isCompleted ? <CheckCircle2 className="w-3.5 h-3.5 text-[#0B0B0B]" /> : idx + 1}
                         </div>
                         <span
                           className={`text-[10px] uppercase tracking-wider mt-1.5 font-medium ${
+<<<<<<< HEAD
                             isCurrent ? 'text-[#C8A96A] font-semibold' : 'text-[#999999]'
+=======
+                            isCurrent ? 'text-[#C8A96A] font-semibold' : 'text-[#F5F1E8]/50'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                           }`}
                         >
                           {step}
@@ -179,8 +187,14 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
                 </div>
               </div>
             ) : (
+<<<<<<< HEAD
               <div className="p-3 bg-rose-950/40 text-rose-300 text-xs border border-rose-800/50">
                 This order was cancelled. If you need assistance, please contact our fragrance concierge (01629927898 or concierge@aevyfragrance.com).
+=======
+              <div className="flex items-center gap-2 bg-rose-950/40 border border-rose-800/60 text-rose-300 text-xs p-3">
+                <ShieldCheck className="w-4 h-4 shrink-0" />
+                <span>This order has been cancelled. Please contact our concierge for assistance.</span>
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
               </div>
             )}
 

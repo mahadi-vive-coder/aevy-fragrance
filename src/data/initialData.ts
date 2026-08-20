@@ -9,6 +9,7 @@ export const INITIAL_SETTINGS: SiteSettings = {
   deliveryInsideDhaka: 70,
   deliveryOutsideDhaka: 130,
   freeDeliveryThreshold: 4500,
+<<<<<<< HEAD
   contactPhone: '01629927898',
   contactEmail: 'concierge@aevyfragrance.com',
   whatsappNumber: '',
@@ -18,6 +19,16 @@ export const INITIAL_SETTINGS: SiteSettings = {
     facebook: 'https://facebook.com/aevyfragrance',
     tiktok: '',
     pinterest: ''
+=======
+  contactPhone: '+880 1629927898',
+  contactEmail: 'hello.aevy@gmail.com',
+  announcement: 'Complimentary delivery across Bangladesh on orders over ৳4,500 • Small-batch artisanal formulation',
+  socialLinks: {
+    instagram: 'https://instagram.com/aevyfragrance',
+    facebook: 'https://facebook.com/aevyfragrance',
+    tiktok: 'https://tiktok.com/@aevyfragrance',
+    pinterest: 'https://pinterest.com/aevyfragrance'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   },
   storeActive: true,
   acceptOrders: true,

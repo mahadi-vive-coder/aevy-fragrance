@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { ShieldCheck, Truck, ArrowLeft, CheckCircle2, AlertCircle, ShoppingBag, Check } from 'lucide-react';
+=======
+import { ShieldCheck, Truck, ArrowLeft, CheckCircle2, AlertCircle, ShoppingBag } from 'lucide-react';
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 import { useCart } from '../context/CartContext.tsx';
 import { useSettings } from '../context/SettingsContext.tsx';
 import { BANGLADESH_DISTRICTS } from '../data/bangladeshLocations.ts';
@@ -16,6 +20,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
   onNavigateCart,
   onNavigateShop
 }) => {
+<<<<<<< HEAD
   const {
     cart,
     subtotal,
@@ -27,6 +32,9 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
     couponError,
     isApplyingCoupon
   } = useCart();
+=======
+  const { cart, subtotal, discount, couponCode, clearCart } = useCart();
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   const { settings } = useSettings();
 
   const [customerName, setCustomerName] = useState('');
@@ -37,11 +45,15 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
   const [customThana, setCustomThana] = useState('');
   const [fullAddress, setFullAddress] = useState('');
   const [note, setNote] = useState('');
+<<<<<<< HEAD
   const [promoInput, setPromoInput] = useState('');
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+<<<<<<< HEAD
   const handleApplyPromo = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!promoInput.trim()) return;
@@ -49,6 +61,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
     if (ok) setPromoInput('');
   };
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   // Available thanas for current district
   const districtObj = BANGLADESH_DISTRICTS.find((d) => d.name === selectedDistrict);
   const availableThanas = districtObj ? districtObj.thanas : [];
@@ -409,6 +423,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Promo Code Input */}
           <div className="space-y-1.5">
             {couponCode ? (
@@ -450,6 +465,8 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             )}
           </div>
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
           {/* Breakdown */}
           <div className="space-y-2 text-xs text-[#F5F1E8]/80 border-t border-[#2A2A2A] pt-3">
             <div className="flex justify-between">

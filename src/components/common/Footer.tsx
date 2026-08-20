@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Instagram, Facebook, Phone, Sparkles, Mail, MapPin } from 'lucide-react';
+=======
+import { Instagram, Facebook, Share2, Sparkles, ArrowUpRight } from 'lucide-react';
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 import { useSettings } from '../../context/SettingsContext.tsx';
 
 interface FooterProps {
@@ -56,12 +60,17 @@ export const Footer: React.FC<FooterProps> = ({
     { label: 'Terms & Conditions', path: '/terms-conditions' }
   ];
 
+<<<<<<< HEAD
   const contactPhone = settings?.contactPhone || '01629927898';
   const instagramUrl = settings?.socialLinks?.instagram || 'https://instagram.com/aevy.fragrance';
   const hasFacebook = settings?.socialLinks?.facebook && settings.socialLinks.facebook !== '#' && settings.socialLinks.facebook.trim() !== '';
 
   return (
     <footer className="bg-[#0B0B0B] text-[#FAFAF8] border-t border-[#222222] pt-16 pb-12 mt-20">
+=======
+  return (
+    <footer className="bg-[#0B0B0B] text-[#FAFAF8] border-t border-[#111111] pt-16 pb-12 mt-20">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid */}
@@ -81,6 +90,7 @@ export const Footer: React.FC<FooterProps> = ({
               </span>
             </button>
             
+<<<<<<< HEAD
             <p className="text-xs sm:text-sm text-[#D4CEBF] max-w-sm leading-relaxed font-normal">
               A modern niche fragrance house founded in Bangladesh. Quiet luxury, minimalist craft, and small-batch formulations engineered for effortless everyday elegance.
             </p>
@@ -91,6 +101,18 @@ export const Footer: React.FC<FooterProps> = ({
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#161616] border border-[#2A2A2A] text-[10px] uppercase tracking-wider text-[#FAFAF8] font-medium">
                 <MapPin className="w-3 h-3 text-[#C8A96A]" /> Narayanganj, Dhaka, Bangladesh
+=======
+            <p className="text-xs text-[#B8B8B8] max-w-sm leading-relaxed">
+              A modern niche fragrance house founded in Bangladesh. Quiet luxury, minimalist craft, and small-batch formulations engineered for effortless everyday elegance.
+            </p>
+
+            <div className="pt-2 flex items-center space-x-3 text-xs text-[#B8B8B8]">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#1A1A1A] border border-[#2A2A2A] text-[10px] uppercase tracking-wider text-[#C8A96A]">
+                <Sparkles className="w-3 h-3" /> Small-Batch Bottled
+              </span>
+              <span className="inline-flex items-center px-2.5 py-1 bg-[#1A1A1A] border border-[#2A2A2A] text-[10px] uppercase tracking-wider text-[#FAFAF8]">
+                Dhaka, Bangladesh
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
               </span>
             </div>
           </div>
@@ -105,9 +127,15 @@ export const Footer: React.FC<FooterProps> = ({
                 <button
                   key={link.path}
                   onClick={() => handleLinkClick(link.path)}
+<<<<<<< HEAD
                   className="text-left text-xs sm:text-[13px] text-[#D4CEBF] hover:text-[#FAFAF8] hover:translate-x-0.5 transition-all flex items-center gap-1 group cursor-pointer py-0.5"
                 >
                   <span>{link.label}</span>
+=======
+                  className="text-left text-xs text-[#B8B8B8] hover:text-[#FAFAF8] transition-colors flex items-center gap-1 group cursor-pointer"
+                >
+                  <span className="group-hover:translate-x-0.5 transition-transform">{link.label}</span>
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                 </button>
               ))}
             </div>
@@ -118,6 +146,7 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="text-xs uppercase tracking-[0.25em] text-[#C8A96A] font-semibold mb-4">
               Fragrance Concierge
             </h4>
+<<<<<<< HEAD
             <div className="space-y-2 text-xs sm:text-[13px] text-[#D4CEBF]">
               <div>
                 <p className="text-[11px] uppercase tracking-wider text-[#999999] mb-0.5">Telephone Support:</p>
@@ -158,16 +187,66 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
 
                 {hasFacebook && (
+=======
+            <div className="space-y-1.5 text-xs text-[#B8B8B8]">
+              <p>Direct Inquiries:</p>
+              <a
+                href={`mailto:${settings?.contactEmail || 'hello.aevy@gmail.com'}`}
+                className="text-[#FAFAF8] hover:text-[#C8A96A] transition-colors block underline font-mono text-[11px]"
+              >
+                {settings?.contactEmail || 'hello.aevy@gmail.com'}
+              </a>
+              <a
+                href={`tel:${settings?.contactPhone || '+880 1629927898'}`}
+                className="text-[#FAFAF8] hover:text-[#C8A96A] transition-colors block underline font-mono text-[11px]"
+              >
+                {settings?.contactPhone || '+880 1629927898'} <ArrowUpRight className="w-3 h-3" />
+              </a>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2">
+              <p className="text-[10px] uppercase tracking-widest text-[#B8B8B8] mb-2.5">Follow Our Journey</p>
+              <div className="flex items-center space-x-3">
+                {settings?.socialLinks?.instagram && (
+                  <a
+                    href={settings.socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full border border-[#2A2A2A] flex items-center justify-center text-[#B8B8B8] hover:text-[#C8A96A] hover:border-[#C8A96A] transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                )}
+                {settings?.socialLinks?.facebook && (
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   <a
                     href={settings.socialLinks.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
+<<<<<<< HEAD
                     className="w-8 h-8 rounded-sm border border-[#333333] bg-[#141414] flex items-center justify-center text-[#D4CEBF] hover:text-[#C8A96A] hover:border-[#C8A96A] transition-colors"
+=======
+                    className="w-8 h-8 rounded-full border border-[#2A2A2A] flex items-center justify-center text-[#B8B8B8] hover:text-[#C8A96A] hover:border-[#C8A96A] transition-colors"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                     aria-label="Facebook"
                   >
                     <Facebook className="w-4 h-4" />
                   </a>
                 )}
+<<<<<<< HEAD
+=======
+                <a
+                  href={settings?.socialLinks?.tiktok || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full border border-[#2A2A2A] flex items-center justify-center text-[#B8B8B8] hover:text-[#C8A96A] hover:border-[#C8A96A] transition-colors"
+                  aria-label="TikTok"
+                >
+                  <Share2 className="w-4 h-4" />
+                </a>
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
               </div>
             </div>
           </div>
@@ -175,9 +254,15 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Bottom Bar */}
+<<<<<<< HEAD
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#999999] space-y-3 sm:space-y-0">
           <p>© {new Date().getFullYear()} AEVY Fragrance. All rights reserved. Narayanganj, Dhaka, Bangladesh.</p>
           <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] tracking-wider uppercase text-[#D4CEBF]">
+=======
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#B8B8B8]/60 space-y-3 sm:space-y-0">
+          <p>© {new Date().getFullYear()} AEVY Fragrance. All rights reserved. Dhaka, Bangladesh.</p>
+          <div className="flex items-center space-x-6 text-[10px] tracking-wider uppercase">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
             <span>Cash on Delivery</span>
             <span>•</span>
             <span>30ml Extrait Concentration</span>

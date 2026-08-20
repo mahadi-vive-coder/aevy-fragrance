@@ -1,6 +1,9 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Product, Order, OrderItem } from '../types.ts';
+<<<<<<< HEAD
 import { resolveImageUrl, OCEANIS_BOTTLE_IMAGE } from './images.ts';
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
 const SUPABASE_URL =
   ((import.meta as any)?.env?.VITE_SUPABASE_URL) ||
@@ -53,7 +56,12 @@ export function mapSupabaseProduct(row: any): Product {
   const size = row.size || '30ml';
   const bottleShape = row.bottle_shape === 'Square' ? 'Square' : 'Round';
   
+<<<<<<< HEAD
   const img = resolveImageUrl(row.image_url);
+=======
+  const defaultPlaceholder = '/src/assets/images/aevy_oceanis_bottle_1786864368427.jpg';
+  const img = (typeof row.image_url === 'string' && row.image_url.trim()) ? row.image_url.trim() : defaultPlaceholder;
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
   const isActive = row.active !== false;
   let status: 'active' | 'inactive' | 'out_of_stock' | 'draft' = 'active';
@@ -176,6 +184,7 @@ export async function getSupabaseProductBySlug(slug: string): Promise<Product | 
  * Generate permanent, sequential order reference number (e.g. 001, 002, 003, ..., 027, ..., 100)
  * Uses database sequence / RPC if configured, with resilient persistent high-water-mark tracking.
  */
+<<<<<<< HEAD
 /**
  * Generate the next order number based ONLY on currently existing orders.
  *
@@ -226,6 +235,8 @@ export async function getNextPermanentOrderNumber(): Promise<string> {
     throw new Error('Unable to generate order number.');
   }
 }
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
 /**
  * Maps a row from public.orders to the application Order interface.
@@ -273,6 +284,22 @@ export function mapSupabaseOrder(row: any, items: OrderItem[] = []): Order {
  * 3. public.customers (upsert if permitted)
  * 4. decrement stock in public.products
  */
+<<<<<<< HEAD
+=======
+
+export async function getNextPermanentOrderNumber(): Promise<string> {
+  const { data, error } = await supabase.rpc('get_next_order_number');
+
+  if (error) {
+    console.error('Failed to generate order number:', error);
+    throw new Error(`Failed to generate order number: ${error.message}`);
+  }
+
+  return String(data).padStart(3, '0');
+}
+
+
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 export async function createSupabaseOrder(orderData: {
   customerName: string;
   phone: string;
@@ -425,6 +452,7 @@ export async function createSupabaseOrder(orderData: {
     }
   }
 
+<<<<<<< HEAD
   // 6. Increment coupon usage in Supabase after successful order creation
   if (orderData.couponCode && String(orderData.couponCode).trim()) {
     try {
@@ -442,6 +470,8 @@ export async function createSupabaseOrder(orderData: {
     }
   }
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   const mappedItems: OrderItem[] = orderData.items.map(i => ({
     productId: i.productId,
     productName: i.productName,
@@ -451,7 +481,11 @@ export async function createSupabaseOrder(orderData: {
     quantity: i.quantity,
     unitPrice: i.unitPrice,
     subtotal: i.unitPrice * i.quantity,
+<<<<<<< HEAD
     image: resolveImageUrl(i.image)
+=======
+    image: i.image
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }));
 
   return {
@@ -478,6 +512,7 @@ export async function createSupabaseOrder(orderData: {
 }
 
 /**
+<<<<<<< HEAD
  * Validate a promotional coupon using existing Supabase validate_coupon RPC
  */
 export async function validateSupabaseCoupon(code: string, subtotal: number): Promise<{
@@ -531,6 +566,8 @@ export async function validateSupabaseCoupon(code: string, subtotal: number): Pr
 }
 
 /**
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
  * Fetch an order by order_number or UUID id
  */
 export async function getSupabaseOrderByIdentifier(identifier: string): Promise<Order | null> {
@@ -578,7 +615,11 @@ export async function getSupabaseOrderByIdentifier(identifier: string): Promise<
           quantity: Number(r.quantity || 1),
           unitPrice: Number(r.unit_price || 0),
           subtotal: Number(r.subtotal || (r.unit_price * r.quantity)),
+<<<<<<< HEAD
           image: resolveImageUrl(r.image_url)
+=======
+          image: r.image_url || '/src/assets/images/aevy_oceanis_bottle_1786864368427.jpg'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
         }));
       }
     } catch {

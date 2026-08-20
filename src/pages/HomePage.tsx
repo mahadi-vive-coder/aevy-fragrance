@@ -1,8 +1,14 @@
 import React from 'react';
+<<<<<<< HEAD
 import { ArrowRight, Sparkles, Droplets, Wind, Feather } from 'lucide-react';
 import { Product } from '../types.ts';
 import { useCart } from '../context/CartContext.tsx';
 import { HERO_CAMPAIGN_IMAGE } from '../lib/images.ts';
+=======
+import { ArrowRight, Sparkles, Droplets, Wind, ShieldCheck, Feather } from 'lucide-react';
+import { Product } from '../types.ts';
+import { useCart } from '../context/CartContext.tsx';
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
 interface HomePageProps {
   products: Product[];
@@ -28,7 +34,11 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Cinematic Atmospheric Background */}
         <div className="absolute inset-0 z-0">
           <img
+<<<<<<< HEAD
             src={HERO_CAMPAIGN_IMAGE}
+=======
+            src="/src/assets/images/aevy_hero_campaign_1786864385152.jpg"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
             alt="AEVY Fragrance Campaign"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center opacity-45 scale-105 transition-transform duration-1000 ease-out"

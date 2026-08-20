@@ -718,7 +718,10 @@ async function startServer() {
       freeDeliveryThreshold,
       contactPhone,
       contactEmail,
+<<<<<<< HEAD
       whatsappNumber,
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
       announcement,
       socialLinks,
       storeActive,
@@ -735,7 +738,10 @@ async function startServer() {
     if (typeof freeDeliveryThreshold === 'number') db.settings.freeDeliveryThreshold = freeDeliveryThreshold;
     if (contactPhone) db.settings.contactPhone = contactPhone;
     if (contactEmail) db.settings.contactEmail = contactEmail;
+<<<<<<< HEAD
     if (whatsappNumber) db.settings.whatsappNumber = whatsappNumber;
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
     if (announcement !== undefined) db.settings.announcement = announcement;
     if (socialLinks) db.settings.socialLinks = socialLinks;
     if (typeof storeActive === 'boolean') db.settings.storeActive = storeActive;
@@ -763,7 +769,11 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
+<<<<<<< HEAD
     console.log(`AEVY Fragrance Server running on port ${PORT}`);
+=======
+    console.log(`AEVY Fragrance Server running on http://0.0.0.0:${PORT}`);
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   });
 }
 

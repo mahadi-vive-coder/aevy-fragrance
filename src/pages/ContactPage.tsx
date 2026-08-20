@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Mail, MapPin, Phone, Send, CheckCircle2, Clock, Instagram } from 'lucide-react';
+=======
+import { Mail, MapPin, MessageSquare, Send, CheckCircle2, Clock } from 'lucide-react';
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 import { useSettings } from '../context/SettingsContext.tsx';
 
 export const ContactPage: React.FC = () => {
@@ -15,9 +19,12 @@ export const ContactPage: React.FC = () => {
     setSubmitted(true);
   };
 
+<<<<<<< HEAD
   const contactPhone = settings?.contactPhone || '01629927898';
   const instagramUrl = settings?.socialLinks?.instagram || 'https://instagram.com/aevy.fragrance';
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-[#F5F1E8]">
       
@@ -29,8 +36,13 @@ export const ContactPage: React.FC = () => {
         <h1 className="font-display text-3xl sm:text-5xl text-[#F5F1E8] tracking-[0.15em] uppercase">
           CONTACT CONCIERGE
         </h1>
+<<<<<<< HEAD
         <p className="font-serif text-base sm:text-lg text-[#D4CEBF] italic leading-relaxed">
           We are at your service for bespoke fragrance inquiries, order status updates, and gifting consultations.
+=======
+        <p className="font-serif text-base sm:text-lg text-[#F5F1E8]/70 italic">
+          We are at your service for bespoke fragrance inquiries, order status updates, and corporate gifting.
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
         </p>
       </div>
 
@@ -40,6 +52,7 @@ export const ContactPage: React.FC = () => {
         <div className="lg:col-span-5 space-y-6">
           <div className="bg-[#111111] border border-[#2A2A2A] p-6 sm:p-8 space-y-6 shadow-xl">
             <h2 className="font-serif text-2xl text-[#F5F1E8] border-b border-[#2A2A2A] pb-3">
+<<<<<<< HEAD
               AEVY Atelier & Studio
             </h2>
 
@@ -52,10 +65,23 @@ export const ContactPage: React.FC = () => {
                   <span className="font-semibold text-[#FAFAF8] uppercase tracking-wider block text-[11px]">Location</span>
                   <p className="text-[#D4CEBF] mt-0.5 leading-relaxed font-normal">
                     Narayanganj, Dhaka, Bangladesh
+=======
+              Dhaka Atelier & Studio
+            </h2>
+
+            <div className="space-y-4 text-xs">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#C8A96A] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-[#F5F1E8] uppercase tracking-wider block text-[11px]">Location</span>
+                  <p className="text-[#F5F1E8]/70 mt-0.5 leading-relaxed font-light">
+                    Gulshan 2, Dhaka 1212, Bangladesh
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   </p>
                 </div>
               </div>
 
+<<<<<<< HEAD
               <div className="flex items-start gap-3.5">
                 <div className="p-2 bg-[#161616] border border-[#2A2A2A] text-[#C8A96A] shrink-0 mt-0.5">
                   <Phone className="w-4 h-4" />
@@ -116,6 +142,30 @@ export const ContactPage: React.FC = () => {
                     Online Orders: 24/7 Nationwide Delivery
                   </p>
                   <p className="text-[#999999] text-xs font-normal">
+=======
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-4 h-4 text-[#C8A96A] shrink-0 mt-0.5" />
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-[#C8A96A] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-[#F5F1E8] uppercase tracking-wider block text-[11px]">Email Inquiries</span>
+                  <p className="text-[#F5F1E8]/70 mt-0.5 font-light">
+                    {settings.contactEmail || 'hello.aevy@gmail.com'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-[#C8A96A] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-[#F5F1E8] uppercase tracking-wider block text-[11px]">Operating Hours</span>
+                  <p className="text-[#F5F1E8]/70 mt-0.5 font-light">
+                    Online Orders: 24/7 Nationwide Delivery
+                  </p>
+                  <p className="text-[#F5F1E8]/70 font-light">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                     Customer Support: Monday – Saturday, 10:00 AM – 9:00 PM
                   </p>
                 </div>
@@ -126,8 +176,13 @@ export const ContactPage: React.FC = () => {
 
         {/* Right: Message Form */}
         <div className="lg:col-span-7 bg-[#111111] border border-[#2A2A2A] p-6 sm:p-10 shadow-xl">
+<<<<<<< HEAD
           <h2 className="font-serif text-2xl sm:text-3xl text-[#F5F1E8] mb-2">Send an Editorial Inquiry</h2>
           <p className="text-xs sm:text-sm text-[#D4CEBF] mb-6">
+=======
+          <h2 className="font-serif text-2xl text-[#F5F1E8] mb-2">Send an Editorial Inquiry</h2>
+          <p className="text-xs text-[#F5F1E8]/60 mb-6">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
             Leave us a note and our fragrance concierge will respond within 4 hours.
           </p>
 
@@ -135,8 +190,13 @@ export const ContactPage: React.FC = () => {
             <div className="py-12 text-center space-y-4 bg-[#0B0B0B] border border-[#2A2A2A] p-6">
               <CheckCircle2 className="w-10 h-10 text-[#C8A96A] mx-auto" />
               <h3 className="font-serif text-2xl text-[#F5F1E8]">Message Transmitted</h3>
+<<<<<<< HEAD
               <p className="text-xs sm:text-sm text-[#D4CEBF] max-w-sm mx-auto leading-relaxed">
                 Thank you for connecting with AEVY. A representative will contact you shortly.
+=======
+              <p className="text-xs text-[#F5F1E8]/70 max-w-sm mx-auto leading-relaxed">
+                Thank you for connecting with AEVY. A representative will contact you via email or WhatsApp shortly.
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -149,7 +209,11 @@ export const ContactPage: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
+<<<<<<< HEAD
                   <label className="block text-xs uppercase tracking-wider text-[#D4CEBF] mb-1 font-medium">
+=======
+                  <label className="block text-xs uppercase tracking-wider text-[#F5F1E8]/70 mb-1">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                     Your Name <span className="text-[#C8A96A]">*</span>
                   </label>
                   <input
@@ -158,12 +222,20 @@ export const ContactPage: React.FC = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Abrar Fahim"
+<<<<<<< HEAD
                     className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-sm text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+=======
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-xs text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   />
                 </div>
 
                 <div>
+<<<<<<< HEAD
                   <label className="block text-xs uppercase tracking-wider text-[#D4CEBF] mb-1 font-medium">
+=======
+                  <label className="block text-xs uppercase tracking-wider text-[#F5F1E8]/70 mb-1">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                     Mobile Number <span className="text-[#C8A96A]">*</span>
                   </label>
                   <input
@@ -171,14 +243,23 @@ export const ContactPage: React.FC = () => {
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+<<<<<<< HEAD
                     placeholder="e.g. 01629927898"
                     className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-sm text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+=======
+                    placeholder="e.g. 01712345678"
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-xs text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   />
                 </div>
               </div>
 
               <div>
+<<<<<<< HEAD
                 <label className="block text-xs uppercase tracking-wider text-[#D4CEBF] mb-1 font-medium">
+=======
+                <label className="block text-xs uppercase tracking-wider text-[#F5F1E8]/70 mb-1">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   Email Address
                 </label>
                 <input
@@ -186,12 +267,20 @@ export const ContactPage: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="e.g. abrar@example.com"
+<<<<<<< HEAD
                   className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-sm text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+=======
+                  className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-xs text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                 />
               </div>
 
               <div>
+<<<<<<< HEAD
                 <label className="block text-xs uppercase tracking-wider text-[#D4CEBF] mb-1 font-medium">
+=======
+                <label className="block text-xs uppercase tracking-wider text-[#F5F1E8]/70 mb-1">
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                   Your Inquiry / Message <span className="text-[#C8A96A]">*</span>
                 </label>
                 <textarea
@@ -200,7 +289,11 @@ export const ContactPage: React.FC = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="How can we assist you with our fragrance collection or custom orders?"
+<<<<<<< HEAD
                   className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-sm text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none resize-none leading-relaxed"
+=======
+                  className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border border-[#2A2A2A] text-xs text-[#F5F1E8] focus:border-[#C8A96A] focus:outline-none resize-none"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
                 />
               </div>
 

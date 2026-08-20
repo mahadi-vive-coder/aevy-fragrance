@@ -348,7 +348,11 @@ export const Invoice: React.FC<InvoiceProps> = ({
               AEVY ARTISANAL PERFUMERY
             </p>
             <p className="tracking-wider">
+<<<<<<< HEAD
               Narayanganj, Dhaka, Bangladesh • Dedicated Concierge: {settings?.contactPhone || '01629927898'} • {settings?.contactEmail || 'concierge@aevyfragrance.com'}
+=======
+              Dhaka, Bangladesh • Dedicated Concierge: {settings?.contactPhone || '+880 1629927898'} • {settings?.contactEmail || 'hello.aevy@gmail.com'}
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
             </p>
             <p className="text-[9px] text-[#888888] tracking-widest uppercase pt-1">
               Thank you for trusting AEVY with your olfactive signature.

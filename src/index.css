@@ -2,9 +2,15 @@
 
 @layer base {
   :root {
+<<<<<<< HEAD
     --font-serif: 'Cormorant Garamond', 'Cinzel', 'Hind Siliguri', Georgia, serif;
     --font-display: 'Cinzel', 'Cormorant Garamond', serif;
     --font-sans: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+=======
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }
 
   body {
@@ -13,19 +19,27 @@
     background-color: #0B0B0B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
     line-height: 1.6;
+=======
+    overflow-x: hidden;
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }
 
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
+<<<<<<< HEAD
     letter-spacing: 0.04em;
     font-feature-settings: "kern" 1, "liga" 1;
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }
 
   .font-display {
     font-family: var(--font-display);
+<<<<<<< HEAD
     letter-spacing: 0.2em;
     font-feature-settings: "kern" 1, "liga" 1;
   }
@@ -33,6 +47,9 @@
   /* High legibility class for body copies */
   p, span, label, input, textarea, select, button {
     font-family: var(--font-sans);
+=======
+    letter-spacing: 0.18em;
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   }
 }
 

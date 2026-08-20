@@ -111,7 +111,10 @@ export interface SiteSettings {
   freeDeliveryThreshold: number;
   contactPhone: string;
   contactEmail: string;
+<<<<<<< HEAD
   whatsappNumber: string;
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   announcement: string;
   socialLinks: {
     instagram: string;

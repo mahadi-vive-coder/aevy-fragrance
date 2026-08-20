@@ -1,6 +1,9 @@
 import React from 'react';
 import { Sparkles, Droplets, ShieldCheck, HeartHandshake, Feather, ArrowRight } from 'lucide-react';
+<<<<<<< HEAD
 import { EDITORIAL_LIFESTYLE_IMAGE } from '../lib/images.ts';
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 
 interface AboutPageProps {
   onNavigateShop: () => void;
@@ -28,13 +31,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateShop }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#111111] border border-[#2A2A2A] p-6 sm:p-12 lg:p-16">
           <div className="lg:col-span-6 relative overflow-hidden bg-[#0B0B0B] border border-[#2A2A2A] shadow-2xl">
             <img
+<<<<<<< HEAD
               src={EDITORIAL_LIFESTYLE_IMAGE}
+=======
+              src="/src/assets/images/aevy_editorial_lifestyle_1786864397734.jpg"
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
               alt="AEVY Fragrance Philosophy"
               referrerPolicy="no-referrer"
               className="w-full h-[400px] sm:h-[500px] object-cover object-center"
             />
             <div className="absolute bottom-4 left-4 bg-[#0B0B0B]/90 border border-[#2A2A2A] text-[#C8A96A] text-[10px] tracking-widest uppercase px-3 py-1 font-semibold">
+<<<<<<< HEAD
               Narayanganj & Dhaka Atelier • Est. 2026
+=======
+              Dhaka Atelier • Est. 2026
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
             </div>
           </div>
 
@@ -104,7 +115,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateShop }) => {
               We bottle in limited numbered batches to ensure every single bottle meets rigorous olfactory standards before leaving our Dhaka studio.
             </p>
           </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
         </div>
       </section>
 

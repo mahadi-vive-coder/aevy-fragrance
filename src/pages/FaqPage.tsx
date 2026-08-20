@@ -86,6 +86,7 @@ export const FaqPage: React.FC = () => {
       </div>
 
       {/* Direct Help Footer */}
+<<<<<<< HEAD
       <div className="mt-14 p-6 sm:p-8 bg-[#111111] border border-[#2A2A2A] text-center space-y-3 shadow-xl">
         <h4 className="font-serif text-xl sm:text-2xl text-[#F5F1E8]">Still have questions?</h4>
         <p className="text-xs sm:text-sm text-[#D4CEBF] max-w-md mx-auto leading-relaxed">
@@ -105,6 +106,13 @@ export const FaqPage: React.FC = () => {
             Email Concierge
           </a>
         </div>
+=======
+      <div className="mt-14 p-6 bg-[#111111] border border-[#2A2A2A] text-center space-y-2">
+        <h4 className="font-serif text-lg text-[#F5F1E8]">Still have questions?</h4>
+        <p className="text-xs text-[#F5F1E8]/60 max-w-sm mx-auto">
+          Our fragrance concierge is available 7 days a week on WhatsApp for personalized consultations.
+        </p>
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
       </div>
 
     </div>

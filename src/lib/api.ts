@@ -1,12 +1,19 @@
 import { Product, Order, SiteSettings } from '../types.ts';
+<<<<<<< HEAD
 import { INITIAL_SETTINGS } from '../data/initialData.ts';
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 import {
   supabase,
   getSupabaseProducts,
   getSupabaseProductBySlug,
   createSupabaseOrder,
+<<<<<<< HEAD
   getSupabaseOrderByIdentifier,
   validateSupabaseCoupon
+=======
+  getSupabaseOrderByIdentifier
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 } from './supabase.ts';
 
 /**
@@ -67,6 +74,7 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
 }
 
 /**
+<<<<<<< HEAD
  * Fetch site settings for delivery rates & store details from Supabase or default config
  */
 export async function fetchSiteSettings(): Promise<SiteSettings> {
@@ -78,6 +86,17 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     contactPhone: '01629927898',
     contactEmail: 'concierge@aevyfragrance.com',
     whatsappNumber: '',
+=======
+ * Fetch site settings for delivery rates & store details
+ */
+export async function fetchSiteSettings(): Promise<SiteSettings> {
+  const fallbackSettings: SiteSettings = {
+    brandName: 'AEVY',
+    tagline: 'ESSENCE OF FRESH ELEGANCE',
+    currency: '৳',
+    contactPhone: '+880 1629927898',
+    contactEmail: 'hello.aevy@gmail.com',
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
     deliveryInsideDhaka: 70,
     deliveryOutsideDhaka: 130,
     freeDeliveryThreshold: 2000,
@@ -86,14 +105,22 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     acceptOrders: true,
     maintenanceMode: false,
     socialLinks: {
+<<<<<<< HEAD
       instagram: 'https://instagram.com/aevy.fragrance',
       facebook: 'https://facebook.com/aevyfragrance',
       tiktok: '',
       pinterest: ''
+=======
+      instagram: 'https://instagram.com/aevyfragrance',
+      facebook: 'https://facebook.com/aevyfragrance',
+      tiktok: 'https://tiktok.com/@aevyfragrance',
+      pinterest: 'https://pinterest.com/aevyfragrance'
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
     }
   };
 
   try {
+<<<<<<< HEAD
     const { data, error } = await supabase.from('settings').select('*').limit(1);
     if (!error && data && data.length > 0) {
       const row = data[0];
@@ -101,15 +128,25 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
         ...fallbackSettings,
         ...(row.settings || row)
       };
+=======
+    const res = await fetch('/api/settings');
+    if (res.ok) {
+      const data = await res.json();
+      if (data?.settings) return { ...fallbackSettings, ...data.settings };
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
     }
   } catch {
     // Non-blocking fallback to default configuration
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
   return fallbackSettings;
 }
 
 /**
+<<<<<<< HEAD
  * Validate promo coupon using existing Supabase validate_coupon RPC
  */
 export async function validateCoupon(
@@ -117,6 +154,42 @@ export async function validateCoupon(
   subtotal: number
 ): Promise<{ code: string; discount: number; description: string }> {
   return await validateSupabaseCoupon(code, subtotal);
+=======
+ * Validate promo coupon
+ */
+export async function validateCoupon(code: string, subtotal: number): Promise<{ code: string; discount: number; description: string }> {
+  try {
+    const res = await fetch('/api/coupons/validate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, subtotal })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.coupon;
+    }
+  } catch {
+    // Non-blocking fallback
+  }
+
+  // Built-in standard coupons if server offline
+  const cleanCode = code.trim().toUpperCase();
+  if (cleanCode === 'AEVY10') {
+    return {
+      code: 'AEVY10',
+      discount: Math.round(subtotal * 0.10),
+      description: '10% Welcome Olfactive Privilege'
+    };
+  }
+  if (cleanCode === 'AEVYFREE') {
+    return {
+      code: 'AEVYFREE',
+      discount: 70,
+      description: 'Free Shipping Voucher'
+    };
+  }
+  throw new Error('Invalid or expired promotional code.');
+>>>>>>> af95be52be9b46ae1ac7f36af859ae95e0d5ee08
 }
 
 /**

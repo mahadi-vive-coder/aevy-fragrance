@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Noto Serif Bengali', 'Bangla Sangam MN', 'SolaimanLipi', Georgia, serif;
+  --font-sans: 'Manrope', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-taka: 'Noto Serif Bengali', 'Noto Sans Bengali', 'Bangla Sangam MN', 'SolaimanLipi', 'Vrinda', sans-serif;
+
+  --color-ivory: #F8F7F3;
+  --color-ivory-light: #FAF9F6;
+  --color-ivory-border: #E6E3DC;
+  --color-soft-black: #222222;
+  --color-primary-black: #111111;
+  --color-muted-text: #6B6B6B;
+  --color-champagne: #C8A96A;
+  --color-champagne-light: #DFCA9B;
+  --color-champagne-dark: #A98748;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #111111;
+    background-color: #F8F7F3;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Bangladeshi Taka symbol (৳) typography refinement */
+.taka-symbol {
+  font-family: var(--font-taka);
+  font-style: normal;
+  display: inline;
+  vertical-align: baseline;
+  letter-spacing: normal;
+}
+
+.font-taka {
+  font-family: var(--font-taka);
+  font-style: normal;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F7F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #E6E3DC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A96A;
+}
+

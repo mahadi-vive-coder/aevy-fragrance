@@ -1,0 +1,8 @@
+{
+  "name": "Remix AEVY E-commerce Architect",
+  "description": "A premium, minimalist UI/UX blueprint for high-end fragrance brands focusing on clean aesthetics and frictionless shopping experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

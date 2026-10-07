@@ -68,9 +68,11 @@ const minPrice =
       <div className="relative w-full aspect-[4/5] bg-[#FAF9F6] overflow-hidden">
         <img
           src={primaryImage}
-          alt={product.name}
+          alt={`AEVY ${product.name} ${product.category || 'perfume'} ${defaultVariant?.size || ''}`.trim()}
           referrerPolicy="no-referrer"
           loading="lazy"
+          width={500}
+          height={625}
           className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
         />
 

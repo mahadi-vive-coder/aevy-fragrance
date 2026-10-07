@@ -4,6 +4,7 @@ import { useOrder } from '../context/OrderContext';
 import { useRouter } from '../context/RouterContext';
 import { Taka } from '../components/common/Taka';
 import { ShieldCheck, Truck, ArrowRight, Lock, AlertCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const BANGLADESH_DISTRICTS = [
   'Narayanganj',
@@ -195,6 +196,12 @@ export const CheckoutPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 font-sans">
+      <SEO
+        title="Checkout | AEVY Fragrance Bangladesh"
+        description="Complete your order securely."
+        canonicalPath="/checkout"
+        noindex={true}
+      />
       <div className="border-b border-[#E6E3DC] pb-4">
         <span className="text-[11px] font-sans tracking-[0.24em] text-[#C8A96A] uppercase font-semibold">
           AEVY
@@ -426,8 +433,11 @@ export const CheckoutPage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <img
                     src={item.imageUrl || 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80'}
-                    alt={item.productName}
+                    alt={`AEVY ${item.productName} ${item.size || ''}`.trim()}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width={48}
+                    height={56}
                     className="w-12 h-14 object-cover rounded bg-[#FAF9F6] border border-[#E6E3DC] shrink-0"
                   />
                   <div>

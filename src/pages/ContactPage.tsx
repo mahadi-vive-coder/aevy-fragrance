@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ContactPage: React.FC = () => {
   const [name, setName] = useState('');
@@ -16,6 +17,11 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 font-sans">
+      <SEO
+        title="Contact AEVY Atelier | Customer Concierge Bangladesh"
+        description="Get in touch with AEVY customer care for perfume consultations, order inquiries, or assistance. Prompt support across Bangladesh."
+        canonicalPath="/contact"
+      />
       <div className="text-center max-w-xl mx-auto space-y-2">
         <span className="text-[11px] font-sans tracking-[0.24em] text-[#C8A96A] uppercase font-semibold">
           GET IN TOUCH

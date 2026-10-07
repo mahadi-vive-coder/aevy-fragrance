@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from '../context/RouterContext';
+import { useRouter, Link } from '../context/RouterContext';
 import { fetchProductBySlug, fetchActiveProducts } from '../lib/shopData';
 import { DBProduct, DBProductVariant, ComboComponentSelection } from '../types';
 import { ProductGallery } from '../components/product/ProductGallery';
@@ -11,6 +11,8 @@ import { Taka } from '../components/common/Taka';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { Heart, Minus, Plus, ShoppingBag, Check, ShieldCheck, Truck, ArrowLeft, Loader2, AlertCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { generateProductSeo, buildProductJsonLd, buildProductBreadcrumbJsonLd } from '../lib/seo';
 
 export const ProductDetailPage: React.FC = () => {
   const { params, navigate } = useRouter();
@@ -88,6 +90,21 @@ export const ProductDetailPage: React.FC = () => {
 
         setLoading(false);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Fetch related products prioritizing same category/gender
+        fetchActiveProducts()
+          .then((all) => {
+            if (!mounted) return;
+            const otherProducts = all.filter((item) => item.slug !== slug);
+            const matched = otherProducts.filter(
+              (item) => item.category === p.category || (p.gender && item.gender === p.gender)
+            );
+            const finalRelated = matched.length >= 3
+              ? matched.slice(0, 3)
+              : [...matched, ...otherProducts.filter((item) => !matched.includes(item))].slice(0, 3);
+            setRelatedProducts(finalRelated);
+          })
+          .catch(() => {});
       })
       .catch((err) => {
         console.error('Error fetching product:', err);
@@ -96,15 +113,6 @@ export const ProductDetailPage: React.FC = () => {
           setLoading(false);
         }
       });
-
-    // Fetch related products
-    fetchActiveProducts()
-      .then((all) => {
-        if (mounted) {
-          setRelatedProducts(all.filter((item) => item.slug !== slug).slice(0, 3));
-        }
-      })
-      .catch(() => {});
 
     return () => {
       mounted = false;
@@ -123,6 +131,12 @@ export const ProductDetailPage: React.FC = () => {
   if (error || !product) {
     return (
       <div className="max-w-xl mx-auto px-4 py-24 text-center">
+        <SEO
+          title="Fragrance Not Located | AEVY Fragrance Bangladesh"
+          description="The fragrance you are seeking could not be located in our atelier archives."
+          canonicalPath={`/products/${slug}`}
+          noindex={true}
+        />
         <div className="bg-white border border-[#E6E3DC] p-10 rounded-sm space-y-4">
           <AlertCircle className="w-8 h-8 text-[#C8A96A] mx-auto" />
           <h2 className="font-serif text-3xl text-[#111111]">FRAGRANCE NOT FOUND</h2>
@@ -143,11 +157,13 @@ export const ProductDetailPage: React.FC = () => {
   const isCombo = product.product_type === 'combo';
   const price = selectedVariant?.price ?? product.base_price ?? product.price ?? 0;
   const isWishlisted = isInWishlist(product.id);
-  const comboSlots = (product as any).comboSlots || (product as any).combo_slots || [];
+  const images = (product.images && product.images.length > 0) ? product.images : [product.image_url || '/images/logo_n.jpg'];
 
-  const images = product.images && product.images.length > 0
-    ? product.images
-    : [product.image_url || 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85'];
+  const seoMeta = generateProductSeo(product);
+  const productJsonLd = buildProductJsonLd(product, seoMeta.canonicalUrl);
+  const breadcrumbJsonLd = buildProductBreadcrumbJsonLd(product, seoMeta.canonicalUrl);
+
+  const comboSlots = product.comboSlots || (product as any).combo_slots || [];
 
   const handleComboSlotChange = (slotId: string, slotTitle: string, variantId: string, allowedVariants: any[]) => {
     const chosen = allowedVariants.find((av: any) => {
@@ -206,22 +222,38 @@ export const ProductDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 font-sans">
+      <SEO
+        title={seoMeta.title}
+        description={seoMeta.description}
+        canonicalPath={`/products/${product.slug}`}
+        ogImage={seoMeta.ogImage}
+        ogType="product"
+        jsonLd={[productJsonLd, breadcrumbJsonLd]}
+      />
+
       {/* Back button & Breadcrumb */}
       <div className="flex items-center justify-between text-xs text-[#6B6B6B]">
-        <button
-          onClick={() => navigate('/shop')}
+        <Link
+          to="/shop"
           className="inline-flex items-center gap-1 hover:text-[#111111] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Fragrances</span>
-        </button>
-        <div className="hidden sm:flex items-center space-x-2">
-          <span>Shop</span>
-          <span>/</span>
-          <span>{product.category || 'Collection'}</span>
-          <span>/</span>
-          <span className="text-[#111111] font-medium">{product.name}</span>
-        </div>
+        </Link>
+        <nav aria-label="Breadcrumb" className="hidden sm:flex items-center space-x-2 text-xs">
+          <Link to="/" className="hover:text-[#111111] transition-colors">Home</Link>
+          <span className="text-[#C8A96A]">•</span>
+          <Link to="/shop" className="hover:text-[#111111] transition-colors">Shop</Link>
+          <span className="text-[#C8A96A]">•</span>
+          <Link
+            to={product.category ? `/shop?category=${encodeURIComponent(product.category)}` : '/collections'}
+            className="hover:text-[#111111] transition-colors"
+          >
+            {product.category || 'Collection'}
+          </Link>
+          <span className="text-[#C8A96A]">•</span>
+          <span className="text-[#111111] font-medium" aria-current="page">{product.name}</span>
+        </nav>
       </div>
 
       {/* Main Product Layout: Desktop 2 Columns */}

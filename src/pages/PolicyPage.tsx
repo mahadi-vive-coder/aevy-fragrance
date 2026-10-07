@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from '../context/RouterContext';
 import { Taka } from '../components/common/Taka';
+import { SEO } from '../components/SEO';
 
 export const PolicyPage: React.FC = () => {
   const { path, navigate } = useRouter();
@@ -14,8 +15,38 @@ export const PolicyPage: React.FC = () => {
 
   const currentType = getPolicyType();
 
+  const policySeoMeta: Record<string, { title: string; description: string; canonicalPath: string }> = {
+    shipping: {
+      title: 'Shipping & Delivery Policy | AEVY Fragrance Bangladesh',
+      description: 'AEVY offers reliable nationwide delivery across Bangladesh with Cash on Delivery. Learn about delivery times, rates, and tracking your order.',
+      canonicalPath: '/shipping',
+    },
+    returns: {
+      title: 'Return & Exchange Policy | AEVY Fragrance',
+      description: "Read AEVY's 7-day return and exchange policy for unopened fragrance flacons in Bangladesh. Hassle-free support for every client.",
+      canonicalPath: '/returns',
+    },
+    privacy: {
+      title: 'Privacy Policy | AEVY Fragrance',
+      description: 'AEVY is committed to protecting your personal information and privacy. Read how we collect, store, and safeguard your data.',
+      canonicalPath: '/privacy',
+    },
+    terms: {
+      title: 'Terms of Service | AEVY Fragrance',
+      description: 'Review terms and conditions for ordering perfumes, purchasing discovery sets, and using the AEVY fragrance online store in Bangladesh.',
+      canonicalPath: '/terms',
+    },
+  };
+
+  const activeMeta = policySeoMeta[currentType] || policySeoMeta.shipping;
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-10 font-sans">
+      <SEO
+        title={activeMeta.title}
+        description={activeMeta.description}
+        canonicalPath={activeMeta.canonicalPath}
+      />
       {/* Navigation tabs between policies */}
       <div className="flex items-center justify-center overflow-x-auto pb-2 border-b border-[#E6E3DC] gap-6 text-xs uppercase tracking-wider font-medium">
         <button

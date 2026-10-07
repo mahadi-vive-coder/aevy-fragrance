@@ -173,8 +173,11 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                     >
                       <img
                         src={image}
-                        alt={product.name}
+                        alt={`AEVY ${product.name} ${product.category || 'perfume'}`}
                         referrerPolicy="no-referrer"
+                        loading="lazy"
+                        width={56}
+                        height={56}
                         className="w-14 h-14 object-cover rounded-xs bg-[#FAF9F6] border border-[#E6E3DC]"
                       />
                       <div className="flex-1 min-w-0">

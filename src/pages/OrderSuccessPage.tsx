@@ -3,6 +3,7 @@ import { useOrder } from '../context/OrderContext';
 import { useRouter } from '../context/RouterContext';
 import { Taka } from '../components/common/Taka';
 import { Check, PackageCheck, ShoppingBag, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const OrderSuccessPage: React.FC = () => {
   const { lastCreatedOrder } = useOrder();
@@ -11,6 +12,12 @@ export const OrderSuccessPage: React.FC = () => {
   if (!lastCreatedOrder) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center font-sans">
+        <SEO
+          title="Order Status | AEVY Fragrance Bangladesh"
+          description="View your order confirmation details."
+          canonicalPath="/order-success"
+          noindex={true}
+        />
         <div className="bg-white border border-[#E6E3DC] p-8 sm:p-12 rounded-sm space-y-4">
           <h2 className="font-serif text-3xl text-[#111111]">TRACK YOUR ORDER</h2>
           <p className="text-sm text-[#6B6B6B] max-w-md mx-auto">
@@ -37,6 +44,12 @@ export const OrderSuccessPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center font-sans">
+      <SEO
+        title="Order Confirmed | AEVY Fragrance Bangladesh"
+        description="Your fragrance order has been confirmed."
+        canonicalPath="/order-success"
+        noindex={true}
+      />
       <div className="bg-white border border-[#E6E3DC] p-8 sm:p-14 rounded-sm space-y-6 shadow-xs">
         {/* Checkmark Icon */}
         <div className="w-16 h-16 rounded-full bg-[#111111] text-white flex items-center justify-center mx-auto shadow-md">

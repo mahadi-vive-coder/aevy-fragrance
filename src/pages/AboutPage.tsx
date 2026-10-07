@@ -1,12 +1,18 @@
 import React from 'react';
 import { useRouter } from '../context/RouterContext';
 import { ArrowRight, Sparkles, Feather, ShieldCheck, Heart } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const AboutPage: React.FC = () => {
   const { navigate } = useRouter();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-20 sm:space-y-28 font-sans">
+      <SEO
+        title="About AEVY | Modern Fragrance Atelier Bangladesh"
+        description="AEVY creates fresh, modern perfumes with quiet elegance in Bangladesh. Learn about our philosophy, high-concentration formulations and craftsmanship."
+        canonicalPath="/about"
+      />
       {/* Editorial Hero */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="text-[11px] font-sans tracking-[0.24em] text-[#C8A96A] uppercase font-semibold">
@@ -25,8 +31,11 @@ export const AboutPage: React.FC = () => {
         <div className="lg:col-span-6 relative aspect-4/5 rounded-sm overflow-hidden border border-[#E6E3DC] shadow-sm">
           <img
             src="/images/aevy-formulation.jpg"
-            alt="AEVY Atelier formulation"
+            alt="AEVY Atelier perfume formulation and craftsmanship laboratory in Bangladesh"
             referrerPolicy="no-referrer"
+            loading="lazy"
+            width={600}
+            height={750}
             className="w-full h-full object-cover object-center"
           />
         </div>

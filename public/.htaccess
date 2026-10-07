@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 301 Permanent Redirect duplicate /product/ to canonical /products/
+  RewriteRule ^product/(.*)$ /products/$1 [R=301,L]
+
+  # Direct file or directory
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA Fallback
+  RewriteRule ^ index.html [L]
+</IfModule>

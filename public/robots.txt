@@ -1,0 +1,26 @@
+# AEVY Fragrance Bangladesh (https://aevyfragrance.shop)
+# Robots Exclusion Protocol File
+
+User-agent: *
+Allow: /
+Allow: /shop
+Allow: /collections
+Allow: /products/
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /shipping
+Allow: /returns
+Allow: /privacy
+Allow: /terms
+
+# Disallow private/transactional routes to save search engine crawl budget.
+# Note: These routes also contain <meta name="robots" content="noindex,nofollow" />
+Disallow: /cart
+Disallow: /checkout
+Disallow: /order-success
+Disallow: /track
+Disallow: /track-order
+
+# XML Sitemap Location
+Sitemap: https://aevyfragrance.shop/sitemap.xml

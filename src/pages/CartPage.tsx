@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import { useRouter } from '../context/RouterContext';
 import { Taka } from '../components/common/Taka';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, ArrowLeft, ShieldCheck, Truck } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const CartPage: React.FC = () => {
   const {
@@ -39,6 +40,12 @@ export const CartPage: React.FC = () => {
   if (items.length === 0) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center font-sans">
+        <SEO
+          title="Shopping Bag | AEVY Fragrance Bangladesh"
+          description="Your personal fragrance shopping bag."
+          canonicalPath="/cart"
+          noindex={true}
+        />
         <div className="max-w-md mx-auto space-y-5 bg-white border border-[#E6E3DC] p-10 sm:p-14 rounded-sm">
           <div className="w-16 h-16 rounded-full bg-[#FAF9F6] border border-[#E6E3DC] flex items-center justify-center text-[#6B6B6B] mx-auto">
             <ShoppingBag className="w-7 h-7 stroke-[1.5]" />
@@ -61,6 +68,12 @@ export const CartPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 font-sans">
+      <SEO
+        title="Shopping Bag | AEVY Fragrance Bangladesh"
+        description="Your personal fragrance shopping bag."
+        canonicalPath="/cart"
+        noindex={true}
+      />
       {/* Page Header */}
       <div className="border-b border-[#E6E3DC] pb-4 flex items-baseline justify-between">
         <div>
@@ -92,8 +105,11 @@ export const CartPage: React.FC = () => {
               <div className="flex items-center gap-4">
                 <img
                   src={item.imageUrl || 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80'}
-                  alt={item.productName}
+                  alt={`AEVY ${item.productName} ${item.size || ''}`.trim()}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  width={80}
+                  height={96}
                   className="w-20 h-24 object-cover rounded bg-[#FAF9F6] border border-[#E6E3DC] shrink-0 cursor-pointer"
                   onClick={() => navigate(`/products/${item.productSlug || item.productId}`)}
                 />

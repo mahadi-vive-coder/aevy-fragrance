@@ -30,9 +30,9 @@ export const FragranceNotes: React.FC<FragranceNotesProps> = ({ product }) => {
             onClick={() => toggle('profile')}
             className="w-full flex items-center justify-between text-left group"
           >
-            <span className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
+            <h2 className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
               Fragrance Profile
-            </span>
+            </h2>
             <ChevronDown
               className={`w-4 h-4 text-[#6B6B6B] transition-transform duration-200 ${
                 openSection === 'profile' ? 'rotate-180 text-[#111111]' : ''
@@ -94,9 +94,9 @@ export const FragranceNotes: React.FC<FragranceNotesProps> = ({ product }) => {
           onClick={() => toggle('details')}
           className="w-full flex items-center justify-between text-left group"
         >
-          <span className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
-            Specifications
-          </span>
+          <h2 className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
+            Performance & Specifications
+          </h2>
           <ChevronDown
             className={`w-4 h-4 text-[#6B6B6B] transition-transform duration-200 ${
               openSection === 'details' ? 'rotate-180 text-[#111111]' : ''
@@ -143,9 +143,9 @@ export const FragranceNotes: React.FC<FragranceNotesProps> = ({ product }) => {
           onClick={() => toggle('wear')}
           className="w-full flex items-center justify-between text-left group"
         >
-          <span className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
+          <h2 className="font-serif text-xl sm:text-2xl text-[#111111] group-hover:text-[#C8A96A] transition-colors">
             Application & Wear
-          </span>
+          </h2>
           <ChevronDown
             className={`w-4 h-4 text-[#6B6B6B] transition-transform duration-200 ${
               openSection === 'wear' ? 'rotate-180 text-[#111111]' : ''

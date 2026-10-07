@@ -1,0 +1,5 @@
+# Redirect legacy /product/:slug to canonical /products/:slug with HTTP 301
+/product/*  /products/:splat  301!
+
+# SPA 200 rewrite fallback for direct visits
+/*  /index.html  200

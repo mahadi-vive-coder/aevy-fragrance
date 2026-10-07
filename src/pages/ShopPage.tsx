@@ -5,6 +5,7 @@ import { ProductCard } from '../components/product/ProductCard';
 import { useRouter } from '../context/RouterContext';
 import { useWishlist } from '../context/WishlistContext';
 import { SlidersHorizontal, X, Heart, Loader2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ShopPage: React.FC = () => {
   const { searchParams } = useRouter();
@@ -123,6 +124,11 @@ export const ShopPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
+      <SEO
+        title="Shop Perfumes in Bangladesh | AEVY Fragrance"
+        description="Explore AEVY's collection of refined perfumes in Bangladesh. Long-lasting Extrait de Parfum in 3ml, 10ml, 15ml, 30ml and 50ml editions with nationwide delivery."
+        canonicalPath="/shop"
+      />
       {/* Header Banner */}
       <div className="text-center max-w-2xl mx-auto space-y-3 pt-4">
         <span className="text-xs uppercase tracking-[0.28em] font-medium text-[#C8A96A]">

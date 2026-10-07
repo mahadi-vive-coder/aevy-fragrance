@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useRouter } from '../context/RouterContext';
+import { SEO } from '../components/SEO';
 
 export const FAQPage: React.FC = () => {
   const { navigate } = useRouter();
@@ -47,6 +48,11 @@ export const FAQPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-10 font-sans">
+      <SEO
+        title="Frequently Asked Questions | AEVY Fragrance"
+        description="Find answers about AEVY perfumes, bottle sizes, fragrance concentration, delivery across Bangladesh, cash on delivery and return policies."
+        canonicalPath="/faq"
+      />
       <div className="text-center space-y-2">
         <span className="text-[11px] font-sans tracking-[0.24em] text-[#C8A96A] uppercase font-semibold">
           AEVY

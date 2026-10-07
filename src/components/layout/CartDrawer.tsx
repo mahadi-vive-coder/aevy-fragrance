@@ -124,8 +124,11 @@ export const CartDrawer: React.FC = () => {
                 <div key={item.id} className="py-4 flex gap-4 items-start group">
                   <img
                     src={item.imageUrl || 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80'}
-                    alt={item.productName}
+                    alt={`AEVY ${item.productName} ${item.size || ''}`.trim()}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width={72}
+                    height={88}
                     className="w-16 h-20 sm:w-18 sm:h-22 object-cover rounded-xs bg-[#FAF9F6] border border-[#E6E3DC] shrink-0"
                   />
 

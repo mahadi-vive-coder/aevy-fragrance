@@ -26,8 +26,11 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
             >
               <img
                 src={img}
-                alt={`${productName} thumbnail ${idx + 1}`}
+                alt={`AEVY ${productName} perfume bottle flacon detail ${idx + 1}`}
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                width={80}
+                height={96}
                 className="w-full h-full object-cover object-center bg-[#FAF9F6]"
               />
             </button>
@@ -39,8 +42,12 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
       <div className="flex-1 relative aspect-[4/5] bg-[#FAF9F6] border border-[#E6E3DC] rounded-xs overflow-hidden">
         <img
           src={images[selectedIndex]}
-          alt={productName}
+          alt={`AEVY ${productName} luxury perfume bottle`}
           referrerPolicy="no-referrer"
+          loading="eager"
+          fetchPriority="high"
+          width={700}
+          height={875}
           className="w-full h-full object-cover object-center transition-all duration-300"
         />
 

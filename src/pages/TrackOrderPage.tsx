@@ -4,6 +4,7 @@ import { useRouter } from '../context/RouterContext';
 import { DBOrder, OrderStatus } from '../types';
 import { Taka } from '../components/common/Taka';
 import { Search, Check, AlertCircle, Loader2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const TrackOrderPage: React.FC = () => {
   const { lookupOrder, lastCreatedOrder } = useOrder();
@@ -93,6 +94,12 @@ export const TrackOrderPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 font-sans">
+      <SEO
+        title="Track Your Order | AEVY Fragrance Bangladesh"
+        description="Check real-time fulfillment status of your perfume order."
+        canonicalPath="/track-order"
+        noindex={true}
+      />
       {/* Header */}
       <div className="text-center max-w-xl mx-auto space-y-2">
         <span className="text-[11px] font-sans tracking-[0.24em] text-[#C8A96A] uppercase font-semibold">

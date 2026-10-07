@@ -4,6 +4,7 @@ import { DBProduct } from '../types';
 import { ProductCard } from '../components/product/ProductCard';
 import { useRouter } from '../context/RouterContext';
 import { Loader2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const CollectionsPage: React.FC = () => {
   const { navigate } = useRouter();
@@ -35,6 +36,11 @@ export const CollectionsPage: React.FC = () => {
 
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
+      <SEO
+        title="Fragrance Collections | AEVY Fragrance Bangladesh"
+        description="Discover AEVY perfume collections and curated discovery sets in Bangladesh. Modern olfactory creations crafted for understated elegance."
+        canonicalPath="/collections"
+      />
       {/* Editorial Header */}
       <section className="pt-12 sm:pt-16 pb-8 text-center max-w-3xl mx-auto px-4 space-y-4">
         <span className="text-xs uppercase tracking-[0.28em] font-medium text-[#C8A96A]">

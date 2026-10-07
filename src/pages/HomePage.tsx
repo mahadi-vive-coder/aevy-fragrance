@@ -4,6 +4,8 @@ import { DBProduct } from '../types';
 import { ProductCard } from '../components/product/ProductCard';
 import { useRouter, Link } from '../context/RouterContext';
 import { ArrowRight, Sparkles, Feather, Compass, Loader2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { buildOrganizationJsonLd } from '../lib/seo';
 
 export const HomePage: React.FC = () => {
   const { navigate } = useRouter();
@@ -39,6 +41,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-20 sm:space-y-28 md:space-y-36 pb-16">
+      <SEO
+        title="AEVY Fragrance Bangladesh | Premium Perfumes for Men & Women"
+        description="Discover AEVY fragrances in Bangladesh — fresh, elegant and modern perfumes for men, women and unisex wear. Shop your everyday signature scent online."
+        canonicalPath="/"
+        jsonLd={buildOrganizationJsonLd()}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] sm:min-h-[86vh] flex items-center pt-24 sm:pt-28 overflow-hidden">
         {/* Subtle warm luxury backdrop illumination */}
@@ -96,8 +104,12 @@ export const HomePage: React.FC = () => {
               <div className="relative w-full max-w-md aspect-[4/5] rounded-sm overflow-hidden bg-[#FAF9F6] border border-[#E6E3DC] shadow-sm">
                 <img
                   src={heroImage}
-                  alt={heroProduct ? heroProduct.name : 'AEVY Extrait de Parfum'}
+                  alt={heroProduct ? `AEVY ${heroProduct.name} ${heroProduct.category || 'Extrait de Parfum'} perfume bottle` : 'AEVY Extrait de Parfum perfume flacon'}
                   referrerPolicy="no-referrer"
+                  loading="eager"
+                  fetchPriority="high"
+                  width={600}
+                  height={750}
                   className="w-full h-full object-cover object-center animate-in fade-in duration-700"
                 />
 
@@ -307,8 +319,11 @@ export const HomePage: React.FC = () => {
             <div className="lg:col-span-7 relative h-72 lg:h-auto overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1400&q=85"
-                alt="AEVY Fragrance Collection"
+                alt="AEVY minimalist luxury perfume formulation aesthetic"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                width={1400}
+                height={800}
                 className="w-full h-full object-cover object-center opacity-85 hover:scale-102 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
